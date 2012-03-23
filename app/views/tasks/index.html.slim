@@ -1,0 +1,14 @@
+h1 Tasks
+
+=form_for :task do |form|
+  =form.label :title
+  =form.text_field :title
+  =form.submit 'Add task'
+
+h2 Pending tasks
+ul#pending_tasks
+  =render partial: 'task', collection: @pending_tasks
+
+h2 Closed tasks
+ul#closed_tasks
+  =render partial: 'closed_task', collection: @closed_tasks, as: :task
